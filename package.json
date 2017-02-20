@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "prestart": "npm run lint",
-    "start": "node_modules/.bin/babel source --out-dir lib",
+    "start": "node_modules/.bin/babel source --out-dir lib --no-comments",
     "test": "node_modules/.bin/jest --config=.jestrc",
     "lint": "node_modules/.bin/eslint source",
     "prepublish": "npm test && npm start",

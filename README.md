@@ -18,7 +18,7 @@ const CnameWebpackPlugin = require('cname-webpack-plugin');
 module.exports = {
     plugins: [
         new CnameWebpackPlugin({
-            domain: 'example.com'
+            domain: 'example.com',
         }),
     ],
 };

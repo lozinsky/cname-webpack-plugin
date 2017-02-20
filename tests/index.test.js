@@ -21,13 +21,16 @@ const createConfig = options => ({
 
 describe('CNAME webpack plugin', () => {
     const CNAME = path.join(OUTPUT_DIR, 'CNAME');
+    const start = cfg => (
+        new Promise(resolve => webpack(cfg, resolve))
+    );
 
     it('should create CNAME file', () => {
         const config = createConfig({
             domain: 'domain.com',
         });
 
-        return new Promise(resolve => webpack(config, resolve))
+        return start(config)
             .then(() => {
                 const content = fs.readFileSync(CNAME, 'utf8');
 
@@ -39,7 +42,7 @@ describe('CNAME webpack plugin', () => {
         const config = createConfig();
         console.warn = jest.fn();
 
-        return new Promise(resolve => webpack(config, resolve))
+        return start(config)
             .then(() => {
                 const isCnameExist = fs.existsSync(CNAME);
 
