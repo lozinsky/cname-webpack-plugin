@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/lozinsky/cname-webpack-plugin.svg?branch=master)](https://travis-ci.org/lozinsky/cname-webpack-plugin)
 # cname-webpack-plugin
 
 Create CNAME file for production build.
