@@ -1,6 +1,6 @@
 {
   "name": "cname-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CNAME webpack plugin",
   "main": "lib/index.js",
   "scripts": {
