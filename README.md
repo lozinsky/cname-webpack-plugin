@@ -5,6 +5,8 @@
 
 # cname-webpack-plugin
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lozinsky/cname-webpack-plugin.svg)](https://greenkeeper.io/)
+
 Create CNAME file for production build.
 
 # Installation
