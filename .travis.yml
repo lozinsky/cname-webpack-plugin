@@ -1,8 +1,5 @@
 sudo: required
 language: node_js
 node_js: stable
-before_install: npm i -g greenkeeper-lockfile
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
 install: npm i
 script: npm run travis
