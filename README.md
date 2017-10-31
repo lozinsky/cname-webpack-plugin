@@ -2,7 +2,6 @@
 [![npm version](https://img.shields.io/npm/v/cname-webpack-plugin.svg?style=flat-square)](https://www.npmjs.com/package/cname-webpack-plugin)
 [![Dependencies Status](https://david-dm.org/lozinsky/cname-webpack-plugin/status.svg?style=flat-square)](https://david-dm.org/lozinsky/cname-webpack-plugin)
 [![DevDependencies Status](https://david-dm.org/lozinsky/cname-webpack-plugin/dev-status.svg?style=flat-square)](https://david-dm.org/lozinsky/cname-webpack-plugin?type=dev)
-[![Greenkeeper badge](https://badges.greenkeeper.io/lozinsky/cname-webpack-plugin.svg)](https://greenkeeper.io/)
 
 # cname-webpack-plugin
 
