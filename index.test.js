@@ -43,7 +43,7 @@ beforeAll(rmTemp);
 beforeEach(mkTemp);
 afterEach(rmTemp);
 
-test('should create the CNAME file correctly', async () => {
+test('should create the CNAME file correctly', async done => {
   const domain = 'domain.com';
 
   await runWebpack({
@@ -51,13 +51,17 @@ test('should create the CNAME file correctly', async () => {
   });
 
   expect(await readFile(cnamePath, 'utf8')).toEqual(domain);
+
+  done();
 });
 
-test('the warning message should be shown', async () => {
+test('the warning message should be shown', async done => {
   console.warn = jest.fn();
 
   await runWebpack();
 
   expect(console.warn).toBeCalled();
   expect(await exists(cnamePath)).toBeFalsy();
+
+  done();
 });
