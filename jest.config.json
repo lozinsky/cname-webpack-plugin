@@ -1,9 +1,0 @@
-{
-	"testRegex": "/tests/.*\\.test\\.js$",
-	"transformIgnorePatterns": [
-		"/node_modules/"
-	],
-	"moduleFileExtensions": [
-		"js"
-	]
-}
