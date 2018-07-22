@@ -29,21 +29,19 @@ async function runWebpack(options) {
   });
 }
 
-async function mkTemp(done) {
+async function mkTemp() {
   await mkdir(tempPath);
-  done();
 }
 
-async function rmTemp(done) {
+async function rmTemp() {
   await del(tempPath);
-  done();
 }
 
 beforeAll(rmTemp);
 beforeEach(mkTemp);
 afterEach(rmTemp);
 
-test('should create the CNAME file correctly', async done => {
+test('should create the CNAME file correctly', async () => {
   const domain = 'domain.com';
 
   await runWebpack({
@@ -51,17 +49,13 @@ test('should create the CNAME file correctly', async done => {
   });
 
   expect(await readFile(cnamePath, 'utf8')).toEqual(domain);
-
-  done();
 });
 
-test('the warning message should be shown', async done => {
+test('the warning message should be shown', async () => {
   console.warn = jest.fn();
 
   await runWebpack();
 
   expect(console.warn).toBeCalled();
   expect(await exists(cnamePath)).toBeFalsy();
-
-  done();
 });
