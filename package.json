@@ -1,6 +1,6 @@
 {
   "name": "cname-webpack-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CNAME webpack plugin",
   "main": "index.js",
   "scripts": {
@@ -29,8 +29,8 @@
   "homepage": "https://github.com/lozinsky/cname-webpack-plugin#readme",
   "devDependencies": {
     "del": "3.0.0",
-    "jest": "22.4.3",
-    "prettier": "1.12.1",
-    "webpack": "4.7.0"
+    "jest": "23.4.1",
+    "prettier": "1.13.7",
+    "webpack": "4.16.1"
   }
 }
