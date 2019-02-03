@@ -1,5 +1,8 @@
-sudo: required
+sudo: false
 language: node_js
 node_js: stable
 install: npm i
-script: npm run travis
+script: npm run release
+cache:
+  directories:
+    - node_modules
