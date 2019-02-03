@@ -4,10 +4,8 @@
   "description": "CNAME webpack plugin",
   "main": "index.js",
   "scripts": {
-    "test": "jest --env=node",
-    "prettier": "prettier --write **/*.js",
-    "prepublishOnly": "npm run prettier && npm test",
-    "release": "npm test"
+    "test": "jest",
+    "prepublishOnly": "jest"
   },
   "files": [
     "index.js"
