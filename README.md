@@ -11,7 +11,7 @@ Create CNAME file for production build.
 npm i cname-webpack-plugin -D
 ```
 
-In your `webpack.config.js`
+Add to `webpack.config.js`
 
 ```javascript
 const CnameWebpackPlugin = require('cname-webpack-plugin');
@@ -24,12 +24,3 @@ module.exports = {
   ],
 };
 ```
-
-## Donations
-
-If you would like to show appreciation for my work, I would gladly accept a small donation!
-
-I will accept donations through PayPal.Me or Buy Me a Coffee.
-
-[![Buy Me a Coffee](https://imgur.com/pp8bBTQ.png)](https://buymeacoffee.com/lozinsky)
-[![PayPal.Me](https://imgur.com/4QfPHwi.png)](https://paypal.me/lozinsky)
