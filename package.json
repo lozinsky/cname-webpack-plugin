@@ -1,7 +1,12 @@
 {
   "name": "cname-webpack-plugin",
   "version": "1.0.5",
-  "description": "CNAME webpack plugin",
+  "description": "Create the CNAME file for your production build",
+  "keywords": [
+    "webpack",
+    "cname",
+    "production"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
@@ -11,21 +16,9 @@
   "files": [
     "lib"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lozinsky/cname-webpack-plugin.git"
-  },
-  "keywords": [
-    "webpack",
-    "cname",
-    "production"
-  ],
-  "author": "Pavel Lozinsky <lozinsky@pm.me> (https://github.com/lozinsky)",
+  "repository": "lozinsky/cname-webpack-plugin",
+  "author": "Pavel Lozinsky <pavel@lozinsky.me>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lozinsky/cname-webpack-plugin/issues"
-  },
-  "homepage": "https://github.com/lozinsky/cname-webpack-plugin#readme",
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
