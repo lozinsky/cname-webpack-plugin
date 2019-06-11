@@ -27,13 +27,13 @@
   },
   "homepage": "https://github.com/lozinsky/cname-webpack-plugin#readme",
   "devDependencies": {
-    "@commitlint/cli": "^7.5.2",
-    "@commitlint/config-conventional": "^7.5.0",
-    "husky": "^1.3.1",
-    "jest": "^24.3.1",
-    "prettier": "^1.16.4",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "husky": "^2.4.1",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
-    "standard-version": "^5.0.1",
-    "webpack": "^4.29.6"
+    "standard-version": "^6.0.1",
+    "webpack": "^4.33.0"
   }
 }
