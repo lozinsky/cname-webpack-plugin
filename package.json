@@ -2,14 +2,14 @@
   "name": "cname-webpack-plugin",
   "version": "1.0.5",
   "description": "CNAME webpack plugin",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
     "prepublishOnly": "jest --detectOpenHandles",
     "release": "standard-version"
   },
   "files": [
-    "src/index.js"
+    "lib"
   ],
   "repository": {
     "type": "git",
