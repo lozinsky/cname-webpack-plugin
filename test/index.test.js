@@ -3,7 +3,7 @@ const path = require('path');
 const util = require('util');
 const rimraf = require('rimraf');
 const webpack = require('webpack');
-const Plugin = require('../index');
+const Plugin = require('../src');
 
 const pack = util.promisify(webpack);
 const readFile = util.promisify(fs.readFile);
