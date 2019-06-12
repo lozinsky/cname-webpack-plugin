@@ -1,61 +1,52 @@
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
-const rimraf = require('rimraf');
-const webpack = require('webpack');
-const Plugin = require('../src');
+const rimraf = util.promisify(require('rimraf'));
+const webpack = util.promisify(require('webpack'));
 
-const pack = util.promisify(webpack);
-const readFile = util.promisify(fs.readFile);
-const exists = util.promisify(fs.exists);
-const writeFile = util.promisify(fs.writeFile);
-const mkdir = util.promisify(fs.mkdir);
-const rmdir = util.promisify(rimraf);
+const CnameWebpackPlugin = require('../lib');
 
-const tempPath = path.resolve(__dirname, '.test-tmp');
-const cnamePath = path.join(tempPath, 'CNAME');
+const fixtures = path.join(__dirname, 'fixtures');
+const entry = path.join(fixtures, 'index.js');
+const dist = path.join(fixtures, 'dist');
+const cname = path.join(dist, 'CNAME');
 
-async function runWebpack(options) {
-  const entry = path.join(tempPath, 'entry.js');
-
-  await writeFile(entry, 'console.log();');
-  await pack({
+async function runWebpack(pluginOptions) {
+  await webpack({
     entry,
-    output: {
-      path: tempPath,
-    },
-
-    plugins: [new Plugin(options)],
+    output: { path: dist },
+    plugins: [new CnameWebpackPlugin(pluginOptions)],
   });
 }
 
-async function mkTemp() {
-  await mkdir(tempPath);
-}
-
-async function rmTemp() {
-  await rmdir(tempPath);
-}
-
-beforeAll(rmTemp);
-beforeEach(mkTemp);
-afterEach(rmTemp);
-
-test('should create the CNAME file correctly', async () => {
-  const domain = 'domain.com';
-
-  await runWebpack({
-    domain,
-  });
-
-  expect(readFile(cnamePath, 'utf8')).resolves.toEqual(domain);
+afterEach(() => {
+  return rimraf(dist);
 });
 
-test('the warning message should be shown', async () => {
-  const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+it('creates the CNAME file correctly', async () => {
+  const domain = 'domain.com';
 
-  await runWebpack();
+  await runWebpack({ domain });
 
-  expect(warnSpy).toBeCalled();
-  expect(exists(cnamePath)).resolves.toBeFalsy();
+  expect(fs.promises.readFile(cname, 'utf8')).resolves.toEqual(domain);
+});
+
+it('throws error if options are missing', async () => {
+  try {
+    await runWebpack();
+  } catch (error) {
+    expect(error.message).toMatch('missing options');
+  }
+
+  expect(fs.promises.access(cname)).rejects.toThrow();
+});
+
+it('throws error if domain is missing', async () => {
+  try {
+    await runWebpack({ domain: undefined });
+  } catch (error) {
+    expect(error.message).toMatch('missing domain');
+  }
+
+  expect(fs.promises.access(cname)).rejects.toThrow();
 });
