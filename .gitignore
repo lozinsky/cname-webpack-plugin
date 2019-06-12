@@ -1,13 +1,8 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# Dependency directories
-node_modules
-
-# Optional cache directory
-.npm
-
-# Project files
 .DS_Store
+*~
+
+node_modules/
+npm-debug.log
+yarn-error.log
+
+dist/
