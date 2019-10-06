@@ -1,4 +1,4 @@
-# cname-webpack-plugin &middot; [![Travis CI](https://img.shields.io/travis/lozinsky/cname-webpack-plugin/master.svg?style=flat-square)](https://travis-ci.org/lozinsky/cname-webpack-plugin) [![npm version](https://img.shields.io/npm/v/cname-webpack-plugin.svg?style=flat-square)](https://www.npmjs.com/package/cname-webpack-plugin)
+# cname-webpack-plugin &middot; [![Test](https://github.com/lozinsky/cname-webpack-plugin/workflows/Test/badge.svg)](https://github.com/lozinsky/cname-webpack-plugin/actions?workflow=Test) [![npm version](https://img.shields.io/npm/v/cname-webpack-plugin.svg?style=flat-square)](https://www.npmjs.com/package/cname-webpack-plugin)
 
 Create the CNAME file for your production build.
 
