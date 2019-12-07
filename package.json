@@ -1,7 +1,7 @@
 {
   "name": "cname-webpack-plugin",
   "version": "2.0.0",
-  "description": "Create the CNAME file for your production build",
+  "description": "Create a CNAME file with webpack",
   "keywords": [
     "webpack",
     "cname",
