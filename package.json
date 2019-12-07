@@ -10,7 +10,6 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "prepublishOnly": "jest --detectOpenHandles",
     "release": "standard-version"
   },
   "files": [
