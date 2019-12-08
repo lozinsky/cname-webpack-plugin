@@ -1,6 +1,11 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    paths:
+      - '**.js'
+      - 'package.json'
+      - 'package-lock.json'
 
 jobs:
   test:
