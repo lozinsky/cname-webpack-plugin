@@ -19,7 +19,7 @@
     "node": ">=10.0.0"
   },
   "repository": "lozinsky/cname-webpack-plugin",
-  "author": "Pavel Lozinsky <pavel@lozinsky.me>",
+  "author": "Pavel Lozinsky <pavel@lozinsky.dev>",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
