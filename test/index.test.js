@@ -4,7 +4,7 @@ const util = require('util');
 const rimraf = util.promisify(require('rimraf'));
 const webpack = util.promisify(require('webpack'));
 
-const CnameWebpackPlugin = require('../lib');
+const CnameWebpackPlugin = require('..');
 
 const fixtures = path.join(__dirname, 'fixtures');
 const entry = path.join(fixtures, 'index.js');
