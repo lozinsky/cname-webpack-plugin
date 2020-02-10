@@ -9,8 +9,7 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles",
-    "release": "standard-version"
+    "test": "jest --detectOpenHandles"
   },
   "files": [
     "lib"
@@ -22,13 +21,8 @@
   "author": "Pavel Lozinsky <pavel@lozinsky.dev>",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "husky": "^3.1.0",
     "jest": "^24.9.0",
-    "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "standard-version": "^7.0.1",
     "webpack": "^4.41.2"
   }
 }
