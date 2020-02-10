@@ -7,12 +7,11 @@
     "cname",
     "production"
   ],
-  "main": "lib/index.js",
   "scripts": {
     "test": "jest --detectOpenHandles"
   },
   "files": [
-    "lib"
+    "index.js"
   ],
   "engines": {
     "node": ">=10.0.0"
