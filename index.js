@@ -12,6 +12,11 @@ class CnameWebpackPlugin {
     this.domain = options.domain;
   }
 
+  /**
+   * @param {import('webpack').Compiler} compiler
+   *
+   * @returns {void}
+   */
   apply(compiler) {
     compiler.hooks.emit.tapAsync('CnameWebpackPlugin', (compilation, done) => {
       compilation.assets.CNAME = {
