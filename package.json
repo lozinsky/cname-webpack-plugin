@@ -22,7 +22,7 @@
   "devDependencies": {
     "jest": "^25.1.0",
     "rimraf": "^3.0.2",
-    "webpack": "^4.41.5"
+    "webpack": "^4.41.6"
   },
   "jest": {
     "testEnvironment": "node"
