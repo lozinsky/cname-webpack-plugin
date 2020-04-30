@@ -20,9 +20,9 @@
   "author": "Pavel Lozinsky <pavel@lozinsky.dev>",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^25.3.0",
+    "jest": "^25.5.2",
     "rimraf": "^3.0.2",
-    "webpack": "^4.42.1"
+    "webpack": "^4.43.0"
   },
   "jest": {
     "testEnvironment": "node"
