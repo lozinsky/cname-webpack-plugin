@@ -1,7 +1,7 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 const path = require('path');
 const util = require('util');
-const rimraf = util.promisify(require('rimraf'));
+const rimraf = require('rimraf');
 const webpack = util.promisify(require('webpack'));
 
 const CnameWebpackPlugin = require('../..');
@@ -19,13 +19,13 @@ async function setup(pluginOptions) {
   });
 }
 
-beforeEach(async () => {
-  await fs.mkdir(tmpDirPath);
-  await fs.writeFile(entryPath, '');
+beforeEach(() => {
+  fs.mkdirSync(tmpDirPath);
+  fs.writeFileSync(entryPath, '');
 });
 
-afterEach(async () => {
-  await rimraf(tmpDirPath);
+afterEach(() => {
+  rimraf.sync(tmpDirPath);
 });
 
 it('creates the CNAME file correctly', async () => {
@@ -33,7 +33,7 @@ it('creates the CNAME file correctly', async () => {
 
   await setup({ domain });
 
-  expect(fs.readFile(cnamePath, 'utf8')).resolves.toEqual(domain);
+  expect(fs.readFileSync(cnamePath, 'utf8')).toEqual(domain);
 });
 
 it('throws error if options are missing', async () => {
@@ -43,7 +43,7 @@ it('throws error if options are missing', async () => {
     expect(error.message).toMatch('missing options');
   }
 
-  expect(fs.access(cnamePath)).rejects.toThrow();
+  expect(() => fs.accessSync(cnamePath)).toThrow();
 });
 
 it('throws error if domain is missing', async () => {
@@ -53,5 +53,5 @@ it('throws error if domain is missing', async () => {
     expect(error.message).toMatch('missing domain');
   }
 
-  expect(fs.access(cnamePath)).rejects.toThrow();
+  expect(() => fs.accessSync(cnamePath)).toThrow();
 });
