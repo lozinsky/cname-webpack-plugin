@@ -1,5 +1,9 @@
 const assert = require('assert').strict;
 
+/**
+ * @typedef {import('webpack').Compiler} WebpackCompiler
+ */
+
 class CnameWebpackPlugin {
   /**
    * @param {object} options Plugin options.
@@ -13,7 +17,7 @@ class CnameWebpackPlugin {
   }
 
   /**
-   * @param {import('webpack').Compiler} compiler
+   * @param {WebpackCompiler} compiler
    *
    * @returns {void}
    */
