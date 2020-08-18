@@ -21,10 +21,10 @@
   "author": "Pavel Lozinsky <pavel@lozinsky.dev>",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^26.1.0",
+    "jest": "^26.5.2",
     "rimraf": "^3.0.2",
-    "standard-version": "^8.0.2",
-    "webpack": "^4.43.0"
+    "standard-version": "^9.0.0",
+    "webpack": "^4.44.2"
   },
   "jest": {
     "testEnvironment": "node"
