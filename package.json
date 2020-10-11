@@ -20,6 +20,9 @@
   "repository": "lozinsky/cname-webpack-plugin",
   "author": "Pavel Lozinsky <pavel@lozinsky.dev>",
   "license": "MIT",
+  "peerDependencies": {
+    "webpack": "^4.0.0 || ^5.0.0"
+  },
   "devDependencies": {
     "jest": "^26.5.2",
     "rimraf": "^3.0.2",
