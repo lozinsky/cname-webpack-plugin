@@ -38,13 +38,11 @@ class CnameWebpack4Plugin extends CnameWebpackPlugin {
    * @returns {void}
    */
   apply(compiler) {
-    compiler.hooks.emit.tapAsync(CnameWebpackPlugin.name, (compilation, done) => {
+    compiler.hooks.emit.tap(CnameWebpackPlugin.name, (compilation) => {
       compilation.assets.CNAME = {
         source: () => this.domain,
         size: () => this.domain.length,
       };
-
-      done();
     });
   }
 }
