@@ -27,9 +27,13 @@
     "jest": "^26.5.2",
     "rimraf": "^3.0.2",
     "standard-version": "^9.0.0",
-    "webpack": "^5.0.0"
+    "webpack": "^5.0.0",
+    "webpack-4": "npm:webpack@^4.44.2"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "setupFiles": [
+      "<rootDir>/tests/setup.js"
+    ]
   }
 }
