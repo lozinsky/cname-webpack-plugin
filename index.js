@@ -1,4 +1,5 @@
 const assert = require('assert').strict;
+const webpack = require('webpack');
 
 /**
  * @typedef {import('webpack').Compiler} WebpackCompiler
@@ -22,6 +23,21 @@ class CnameWebpackPlugin {
    * @returns {void}
    */
   apply(compiler) {
+    compiler.hooks.compilation.tap('CnameWebpackPlugin', (compilation) => {
+      compilation.hooks.additionalAssets.tap('CnameWebpackPlugin', () => {
+        compilation.emitAsset('CNAME', new webpack.sources.RawSource(this.domain));
+      });
+    });
+  }
+}
+
+class CnameWebpack4Plugin extends CnameWebpackPlugin {
+  /**
+   * @param {WebpackCompiler} compiler
+   *
+   * @returns {void}
+   */
+  apply(compiler) {
     compiler.hooks.emit.tapAsync('CnameWebpackPlugin', (compilation, done) => {
       compilation.assets.CNAME = {
         source: () => this.domain,
@@ -33,4 +49,4 @@ class CnameWebpackPlugin {
   }
 }
 
-module.exports = CnameWebpackPlugin;
+module.exports = webpack.version.startsWith('4') ? CnameWebpack4Plugin : CnameWebpackPlugin;
