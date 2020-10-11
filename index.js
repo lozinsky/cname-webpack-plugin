@@ -11,8 +11,8 @@ class CnameWebpackPlugin {
    * @param {string} options.domain CNAME file content.
    */
   constructor(options) {
-    assert(options, 'CnameWebpackPlugin: missing options');
-    assert(options.domain, 'CnameWebpackPlugin: missing domain');
+    assert(options, `${CnameWebpackPlugin.name}: missing options`);
+    assert(options.domain, `${CnameWebpackPlugin.name}: missing domain`);
 
     this.domain = options.domain;
   }
@@ -23,8 +23,8 @@ class CnameWebpackPlugin {
    * @returns {void}
    */
   apply(compiler) {
-    compiler.hooks.compilation.tap('CnameWebpackPlugin', (compilation) => {
-      compilation.hooks.additionalAssets.tap('CnameWebpackPlugin', () => {
+    compiler.hooks.compilation.tap(CnameWebpackPlugin.name, (compilation) => {
+      compilation.hooks.additionalAssets.tap(CnameWebpackPlugin.name, () => {
         compilation.emitAsset('CNAME', new webpack.sources.RawSource(this.domain));
       });
     });
@@ -38,7 +38,7 @@ class CnameWebpack4Plugin extends CnameWebpackPlugin {
    * @returns {void}
    */
   apply(compiler) {
-    compiler.hooks.emit.tapAsync('CnameWebpackPlugin', (compilation, done) => {
+    compiler.hooks.emit.tapAsync(CnameWebpackPlugin.name, (compilation, done) => {
       compilation.assets.CNAME = {
         source: () => this.domain,
         size: () => this.domain.length,
