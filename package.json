@@ -15,7 +15,7 @@
     "index.js"
   ],
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=10.13.0"
   },
   "repository": "lozinsky/cname-webpack-plugin",
   "author": "Pavel Lozinsky <pavel@lozinsky.dev>",
