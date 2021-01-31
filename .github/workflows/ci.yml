@@ -1,12 +1,10 @@
 name: CI
 
 on:
+  pull_request:
   push:
-    paths:
-      - '**.js'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/ci.yml'
+    branches:
+      - main
 
 jobs:
   test:
