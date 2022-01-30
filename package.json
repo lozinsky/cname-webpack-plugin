@@ -24,11 +24,11 @@
     "webpack": "^4.0.0 || ^5.0.0"
   },
   "devDependencies": {
-    "jest": "^27.4.7",
-    "rimraf": "^3.0.2",
-    "standard-version": "^9.3.2",
-    "webpack": "^5.67.0",
-    "webpack-4": "npm:webpack@^4.46.0"
+    "jest": "27.4.7",
+    "rimraf": "3.0.2",
+    "standard-version": "9.3.2",
+    "webpack": "5.67.0",
+    "webpack-4": "npm:webpack@4.46.0"
   },
   "jest": {
     "setupFiles": [
