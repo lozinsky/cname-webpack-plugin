@@ -27,7 +27,7 @@
     "jest": "27.5.1",
     "rimraf": "3.0.2",
     "standard-version": "9.3.2",
-    "webpack": "5.70.0",
+    "webpack": "5.76.0",
     "webpack-4": "npm:webpack@4.46.0"
   },
   "jest": {
